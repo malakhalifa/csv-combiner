@@ -25,9 +25,6 @@ for i in range(1, n):
     # merge common columns of 2 dataframes
     df = pd.merge(dfA, dfB, on=list(set(dfA.columns) & set(dfB.columns)), how = "outer")
 
-    # keep columns that exist in dfA
-    # df = df[dfA.columns]
-
     df["filename"] = nA * [sys.argv[i]] + nB * [sys.argv[i+1]]
 
     # save to new csv
